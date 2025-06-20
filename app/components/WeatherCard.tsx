@@ -8,7 +8,6 @@ interface WeatherCardProps {
   condition: string
   description: string
   icon: string
-  unit: "C" | "F"
 }
 
 export function WeatherCard({
@@ -19,7 +18,6 @@ export function WeatherCard({
   condition,
   description,
   icon,
-  unit,
 }: WeatherCardProps) {
   return (
     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-white">

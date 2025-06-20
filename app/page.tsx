@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useState }  from "react"
 import { Search, MapPin, Thermometer, Wind, Droplets, Eye } from "lucide-react"
 import { WeatherCard } from "./components/WeatherCard"
 import { ForecastCard } from "./components/ForecastCard"
@@ -91,7 +89,6 @@ export default function WeatherApp() {
     })
   }
 
-  const today = new Date()
   const dailyForecasts = weatherData?.forecast?.list.filter((_, index) => index % 8 === 0).slice(0, 6) || []
 
   return (
@@ -153,12 +150,11 @@ export default function WeatherApp() {
               <WeatherCard
                 city={weatherData.current.name}
                 country={weatherData.current.sys.country}
-                date={formatDate(today)}
+                date={formatDate(new Date())}
                 temperature={convertTemp(weatherData.current.main.temp)}
                 condition={weatherData.current.weather[0].main}
                 description={weatherData.current.weather[0].description}
                 icon={weatherData.current.weather[0].icon}
-                unit={unit}
               />
 
               {/* Daily Forecast */}
@@ -176,7 +172,6 @@ export default function WeatherApp() {
                       icon={forecast.weather[0].icon}
                       highTemp={convertTemp(forecast.main.temp_max)}
                       lowTemp={convertTemp(forecast.main.temp_min)}
-                      unit={unit}
                     />
                   ))}
                 </div>

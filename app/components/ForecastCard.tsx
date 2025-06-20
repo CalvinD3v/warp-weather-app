@@ -6,10 +6,9 @@ interface ForecastCardProps {
   icon: string
   highTemp: number
   lowTemp: number
-  unit: "C" | "F"
 }
 
-export function ForecastCard({ date, condition, icon, highTemp, lowTemp, unit }: ForecastCardProps) {
+export function ForecastCard({ date, condition, icon, highTemp, lowTemp }: ForecastCardProps) {
   const formatTime = (date: Date) => {
     return date.toLocaleDateString("en-US", {
       weekday: "short",
