@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-const API_KEY = "050eea3f4958c67a72bf454b67527fe2"
+const API_KEY = process.env.OPENWEATHER_API_KEY
 const BASE_URL = "https://api.openweathermap.org/data/2.5"
 
 export async function GET(request: NextRequest) {
@@ -9,6 +9,10 @@ export async function GET(request: NextRequest) {
 
   if (!city) {
     return NextResponse.json({ error: "City parameter is required" }, { status: 400 })
+  }
+
+  if (!API_KEY) {
+    return NextResponse.json({ error: "OpenWeather API key is not configured" }, { status: 500 })
   }
 
   try {
