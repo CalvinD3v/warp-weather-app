@@ -32,8 +32,8 @@ This application displays temperatures in **Celsius** by default, with an the op
 
 1. Clone the repository:
    \`\`\`bash
-   git clone <repository-url>
-   cd weather-app
+   git clone [https://github.com](https://github.com/CalvinD3v/warp-weather-app)
+   cd warp-weather-app
    \`\`\`
 
 2. Install dependencies:
@@ -134,7 +134,7 @@ Error handling covers:
 ## Project Structure
 
 \`\`\`
-weather-app/
+warp-weather-app/
 ├── app/
 │   ├── api/
 │   │   └── weather/
